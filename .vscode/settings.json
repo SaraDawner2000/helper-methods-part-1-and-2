@@ -41,7 +41,8 @@
   "gitlens.showWelcomeOnInstall": false,
   "gitlens.currentLine.enabled": false,
   "emmet.includeLanguages": {
-    "erb": "html"
+    "erb": "html",
+    "ruby": "html"
   },
   "[ruby]": {
     "editor.defaultFormatter": "mbessey.vscode-rufo",
