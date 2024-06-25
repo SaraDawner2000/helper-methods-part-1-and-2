@@ -37,6 +37,11 @@ class RolesController < ApplicationController
   end
 
   def destroy
+    @role = Role.find(params[:id])
+
+    @role.destroy
+
+    redirect_to roles_url, notice: "Role deleted successfully"
   end
 
   private
