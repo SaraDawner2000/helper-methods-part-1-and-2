@@ -1,7 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @actor %>
-
+<%# render @actor %> <!--what does this do?-->
+<div>
+  <dt>Name</dt>
+  <dd><%= @actor.name %></dd>
+  <dt>DOB</dt>
+  <dd><%= @actor.dob %></dd>
+  <dt>Bio</dt>
+  <dd><%= @actor.bio %></dd>
+</div>
 <div>
   <%= link_to "Edit this actor", edit_actor_path(@actor) %> |
   <%= link_to "Back to actors", actors_path %>
