@@ -21,6 +21,7 @@ class ActorsController < ApplicationController
 
   # POST /actors or /actors.json
   def create
+    actor_params = params.require(:actor).permit(:name, :dob, :bio)
     @actor = Actor.new(actor_params)
 
     respond_to do |format|
