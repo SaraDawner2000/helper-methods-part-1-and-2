@@ -1,24 +1,8 @@
 <h1>New actor</h1>
+<%= render "form", actor: @actor %>
 
-<%= form_with(model: @actor, data: { turbo: false }) do |form| %>
-  <div>
-    <%= form.label :name  %>
-    <%= form.text_field :name %>
-  </div>
+<br>
 
-  <div>
-    <%= form.label :dob  %>
-    <%= form.date_field :dob %>
-  </div>
-
-  <div>
-    <%= form.label :bio  %>
-    <%= form.text_area :bio, rows: 3 %>
-  </div>
-
-  <%= form.button %>
-
-<%end%>
 <div>
   <%= link_to "Back to actors", actors_path %>
 </div>

@@ -10,4 +10,5 @@
 #  movie_id   :integer
 #
 class Role < ApplicationRecord
+  validates :character, :actor_id, :movie_id, presence: true
 end

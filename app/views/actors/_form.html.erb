@@ -1,4 +1,4 @@
-<%= form_with(model: actor) do |form| %>
+<%= form_with(model: actor, data: { turbo: false }) do |form| %>
   <% if actor.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(actor.errors.count, "error") %> prohibited this actor from being saved:</h2>
@@ -12,6 +12,19 @@
   <% end %>
 
   <div>
-    <%= form.submit %>
+    <%= form.label :name  %>
+    <%= form.text_field :name %>
   </div>
+
+  <div>
+    <%= form.label :dob  %>
+    <%= form.date_field :dob %>
+  </div>
+
+  <div>
+    <%= form.label :bio  %>
+    <%= form.text_area :bio, rows: 3 %>
+  </div>
+
+  <%= form.button %>
 <% end %>
