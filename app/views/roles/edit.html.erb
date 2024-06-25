@@ -1,0 +1,21 @@
+<h1>Edit role</h1>
+
+<%= form_with(model: @role, data: { turbo: false }, method: :patch) do |form| %>
+  <div>
+    <%=form.label :actor_id, "Actor ID" %>
+    <%= form.text_field :actor_id %>
+  </div>
+
+  <div>
+    <%=form.label :movie_id, "Movie ID" %>
+    <%= form.text_field :movie_id %>
+  </div>
+
+  <div>
+    <%=form.label :character %>
+    <%= form.text_field :character %>
+  </div>
+
+  <%= form.button %> <!--the form.button created a button named "Save"-->
+
+<% end %>
