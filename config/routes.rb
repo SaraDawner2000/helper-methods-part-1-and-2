@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :actors
   root "movies#index"
+  resources :actors
+  resources :roles
   resources :movies
   #------------------------------
 end
