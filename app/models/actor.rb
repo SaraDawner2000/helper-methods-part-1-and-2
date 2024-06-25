@@ -11,4 +11,6 @@
 #
 class Actor < ApplicationRecord
   validates :name, :dob, presence: true
+  has_many :roles
+  has_many :movies, through: :characters, source: :movie
 end
