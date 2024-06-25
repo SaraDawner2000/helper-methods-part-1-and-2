@@ -9,18 +9,17 @@
     <th>Details</th>
   </thead>
   <tbody>
-    <tr>
-      <% @actors.each do |actor| %>
-        <%# render actor %><!--what does this do? -->
+    
+    <% @actors.each do |actor| %>
+      <tr>
 
           <td id="actor_id"><%= actor.id %></td>
           <td id="actor_name"><%= actor.name %></td>
           <td id="actor_dob"><%= actor.dob %></td>
           <td id="actor_bio"><%= actor.bio %></td>
           <td id="actor_link"><%= link_to "Show this actor", actor %></td>
-
-      <% end %>
-    </tr>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 
