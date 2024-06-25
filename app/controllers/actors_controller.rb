@@ -37,6 +37,7 @@ class ActorsController < ApplicationController
 
   # PATCH/PUT /actors/1 or /actors/1.json
   def update
+    actor_params = params.require(:actor).permit(:name, :dob, :bio)
     respond_to do |format|
       if @actor.update(actor_params)
         format.html { redirect_to actor_url(@actor), notice: "Actor was successfully updated." }

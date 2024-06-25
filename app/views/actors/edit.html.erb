@@ -1,8 +1,28 @@
 <h1>Editing actor</h1>
 
-<%= render "form", actor: @actor %>
+<!--<%= render "form", actor: @actor %>
 
-<br>
+<br>--><!--how does this work?-->
+
+<%= form_with(model: @actor, data: { turbo: false }, method: :patch) do |form| %>
+  <div>
+    <%= form.label :name  %>
+    <%= form.text_field :name, value: @actor.name %>
+  </div>
+
+  <div>
+    <%= form.label :dob  %>
+    <%= form.date_field :dob, value: @actor.dob %>
+  </div>
+
+  <div>
+    <%= form.label :bio  %>
+    <%= form.text_area :bio, rows: 3, value: @actor.bio %>
+  </div>
+
+  <%= form.button %>
+
+<%end%>
 
 <div>
   <%= link_to "Show this actor", @actor %> |
