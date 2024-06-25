@@ -11,4 +11,6 @@
 #
 class Role < ApplicationRecord
   validates :character, :actor_id, :movie_id, presence: true
+  belongs_to :movie
+  belongs_to :actor
 end
