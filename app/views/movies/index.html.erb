@@ -5,7 +5,7 @@
 <hr>
 
 <div>
-  <a href="/movies/new">Add a new movie</a>
+  <%= link_to "Add a new movie", new_movie_path %>
 </div>
 
 <hr>
@@ -36,7 +36,7 @@
     </th>
   </tr>
 
-  <% @list_of_movies.each do |a_movie| %>
+  <% @movies.each do |a_movie| %>
   <tr>
     <td>
       <%= a_movie.id %>
@@ -58,10 +58,10 @@
     </td>
 
     <td>
-      <a href="/movies/<%= a_movie.id %>">
-        Show details
-      </a>
+      <%= link_to "Show details", a_movie %>
     </td>
   </tr>
   <% end %>
 </table>
+
+  
