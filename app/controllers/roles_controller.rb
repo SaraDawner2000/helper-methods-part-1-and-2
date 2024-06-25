@@ -16,7 +16,6 @@ class RolesController < ApplicationController
   end
 
   def create
-    role_params = params.require(:role).permit(:actor_id, :movie_id, :character)
     @role = Role.new(role_params)
 
     if @role.valid?
@@ -28,8 +27,20 @@ class RolesController < ApplicationController
   end
 
   def update
+    @role = Role.find(params[:id])
+
+    if @role.update(role_params)
+      redirect_to role_url(@role), notice: "Role updated successfully"
+    else
+      redirect_to role_url(@role), alert: "Role failed to update successfully"
+    end
   end
 
   def destroy
   end
+
+  private
+    def role_params
+      params.require(:role).permit(:actor_id, :movie_id, :character)
+    end
 end
