@@ -9,7 +9,7 @@
     <th>Actor</th>
     <th>Movie</th>
     <th>Character</th>
-    <th>Movie details</th>
+    <th>Role details</th>
   </thead>
   <tbody>
     <% @roles.each do |role| %>
@@ -18,7 +18,7 @@
       <td><%= role.actor_id %></td>
       <td><%= role.movie_id %></td>
       <td><%= role.character %></td>
-      <td><%= link_to "Show details", movie_path(role.movie_id) %></td>
+      <td><%= link_to "Show details", role_path(role.id) %></td>
     </tr>
     <% end %>
   </tbody>

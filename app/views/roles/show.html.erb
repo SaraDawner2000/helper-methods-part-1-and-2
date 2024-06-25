@@ -1,0 +1,20 @@
+<h1>Role #<%= @role.id %></h1>
+<div>
+  <div><%= link_to "Go back", roles_path %></div>
+  <div><%= link_to "Edit role", edit_role_path(@role.id) %></div>
+  <div><%= link_to "Delete role", @role, data: {turbo_method: :delete} %></div>
+</div>
+
+
+<dl>
+  <dt>Actor</dt>
+  <dd><%= @role.actor_id %></dd>
+  <dt>Movie</dt>
+  <dd><%= @role.movie_id %></dd>
+  <dt>Character</dt>
+  <dd><%= @role.character %></dd>
+  <dt>Created at</dt>
+  <dd><%= @role.created_at %></dd>
+  <dt>Updated at</dt>
+  <dd><%= @role.updated_at %></dd>
+</dl>
