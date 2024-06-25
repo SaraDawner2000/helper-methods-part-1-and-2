@@ -2,13 +2,28 @@
 
 <h1>Actors</h1>
 
-<div id="actors">
-  <% @actors.each do |actor| %>
-    <%= render actor %>
-    <p>
-      <%= link_to "Show this actor", actor %>
-    </p>
-  <% end %>
-</div>
+<table id="actors">
+  <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>DOB</th>
+    <th>Bio</th>
+    <th>Details</th>
+  </thead>
+  <tbody>
+    <tr>
+      <% @actors.each do |actor| %>
+        <%# render actor %><!--what does this do? -->
+
+          <td id="actor_id"><%= actor.id %></td>
+          <td id="actor_name"><%= actor.name %></td>
+          <td id="actor_dob"><%= actor.dob %></td>
+          <td id="actor_bio"><%= actor.bio %></td>
+          <td id="actor_link"><%= link_to "Show this actor", actor %></td>
+
+      <% end %>
+    </tr>
+  </tbody>
+</table>
 
 <%= link_to "New actor", new_actor_path %>
