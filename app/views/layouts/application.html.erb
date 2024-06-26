@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <nav>
+      <span><%= link_to "Movies", movies_path %></span>
+      <span><%= link_to "Actors", actors_path %></span>
+      <span><%= link_to "Roles", roles_path %></span>
+    </nav>
+
+    <hr>
     <% if notice.present? %>
       <div style="color:green;">
         <%= notice %>
