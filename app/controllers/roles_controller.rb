@@ -22,7 +22,7 @@ class RolesController < ApplicationController
       @role.save
       redirect_to role_url(@role), notice: "Role created successfully"
     else
-      redirect_to role_url(@role), alert: "Role failed to create successfully"
+      redirect_to new_role_url, alert: "Role failed to create successfully"
     end
   end
 
