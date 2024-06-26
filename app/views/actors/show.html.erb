@@ -1,0 +1,28 @@
+<h1>Actor #<%= @actor.id %></h1>
+<%= render @actor %>
+<hr>
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Movie</th>
+    <th>Character</th>
+    <th>Role details</th>
+  </thead>
+  <tbody>
+    <% @actor.roles.each do |role| %>
+      <tr>
+        <td><%= role.id %></td>
+        <td><%= role.movie.title %></td>
+        <td><%= role.character %></td>
+        <td><%= link_to "Show details", role_path(role.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<hr>
+<div>
+  <%= link_to "Edit this actor", edit_actor_path(@actor) %> |
+  <%= link_to "Back to actors", actors_path %>
+
+  <%= button_to "Destroy this actor", @actor, method: :delete %>
+</div>

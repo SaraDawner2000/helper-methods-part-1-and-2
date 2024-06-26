@@ -11,14 +11,24 @@
   </head>
 
   <body>
-    <div style="color: green;">
-      <%= notice %>
-    </div>
+    <nav>
+      <span><%= link_to "Movies", movies_path %></span>
+      <span><%= link_to "Actors", actors_path %></span>
+      <span><%= link_to "Roles", roles_path %></span>
+    </nav>
 
-    <div style="color: red;">
-      <%= alert %>
-    </div>
-    
+    <hr>
+    <% if notice.present? %>
+      <div style="color:green;">
+        <%= notice %>
+      </div>
+    <% end %>
+
+    <% if alert.present? %>
+      <div style="color:red;">
+        <%= alert %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

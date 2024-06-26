@@ -1,0 +1,26 @@
+<h1>Actors</h1>
+
+<table id="actors">
+  <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>DOB</th>
+    <th>Bio</th>
+    <th>Details</th>
+  </thead>
+  <tbody>
+    
+    <% @actors.each do |actor| %>
+      <tr>
+
+          <td id="actor_id"><%= actor.id %></td>
+          <td id="actor_name"><%= actor.name %></td>
+          <td id="actor_dob"><%= actor.dob %></td>
+          <td id="actor_bio"><%= actor.bio %></td>
+          <td id="actor_link"><%= link_to "Show this actor", actor %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New actor", new_actor_path %>
